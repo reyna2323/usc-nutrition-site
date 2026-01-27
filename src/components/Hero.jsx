@@ -68,7 +68,7 @@ export default function Hero() {
     />
 
       <h2 className="welcome-text">Welcome to</h2>
-      <h1>USC Food Science & Nutrition Club</h1>
+      <h1>USC Food SC’ience & Nutrition Club</h1>
       <button className="glow-button">Learn More</button>
     </motion.div>
     </div>
