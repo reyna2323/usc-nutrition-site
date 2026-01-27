@@ -1,4 +1,15 @@
-.hero-container {
+.hero-wrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hero-stack {
+    height: 200vh;
+    width: 100%;
+  }
+  
+  /* HERO SCREEN */
+  .hero-container {
     height: 100vh;
     width: 100%;
     position: relative;
@@ -9,7 +20,7 @@
   
     background:
       radial-gradient(circle at var(--x) var(--y),
-        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.15),
         transparent 40%),
       linear-gradient(135deg, #35605A, #6B818C, #D8E4FF);
   
@@ -18,7 +29,120 @@
     align-items: center;
   }
   
-  /* Ripple */
+  .hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    text-shadow: 0 0 15px rgba(255,255,255,0.4);
+  }
+  
+  .hero-logo {
+    width: clamp(120px, 20vw, 260px);
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-text {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    letter-spacing: 3px;
+    opacity: 0.85;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: 2px;
+  }
+  
+  /* MISSION SCREEN */
+  .mission-screen {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #6B818C, #35605A);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .mission-content {
+    color: white;
+    text-align: center;
+    max-width: 700px;
+    padding: 2rem;
+  }
+  
+  .mission-content h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  
+  .mission-content p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.6;
+  }
+  
+  .arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    z-index: 3000;
+  }
+  
+  .arrow:hover {
+    transform: translateX(-50%) scale(1.2);
+    text-shadow: 0 0 30px rgba(255,255,255,1);
+  }
+  
+  /* glow stronger when user scrolls */
+  .arrow.active {
+    animation: pulseArrow 1s infinite;
+    text-shadow: 0 0 35px rgba(255,255,255,1);
+  }
+  
+  @keyframes pulseArrow {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.25); }
+    100% { transform: translateX(-50%) scale(1); }
+  }
+  
+  /* positioning */
+  .arrow.down {
+    bottom: 30px;
+  }
+  
+  .arrow.up {
+    top: 90px; /* below navbar */
+  }
+
+  .mission-button {
+    margin-top: 2.5rem;
+    padding: 1rem 2.8rem;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    border: 1px solid white;
+  
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+  
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    backdrop-filter: blur(6px);
+  
+    transition: all 0.3s ease;
+  }
+  
+  .mission-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(255,255,255,0.9);
+  }
+  
   .ripple {
     position: absolute;
     width: 220px;
@@ -28,86 +152,4 @@
     filter: blur(30px);
     pointer-events: none;
     transform: translate(-50%, -50%);
-  }
-  
-  /* Center Content */
-  .hero-content {
-    text-align: center;
-    color: white;
-    z-index: 5;
-    text-shadow: 0 0 12px rgba(255,255,255,0.4);
-  }
-  
-  .welcome-text {
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
-    letter-spacing: 3px;
-    opacity: 0.85;
-    margin-bottom: 0.5rem;
-  }
-  
-  .hero-content h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Glow Button */
-  .glow-button {
-    padding: clamp(0.6rem, 1vw, 0.9rem) clamp(1.5rem, 3vw, 2.5rem);
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    border-radius: 40px;
-    border: 1px solid white;
-    cursor: pointer;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(255,255,255,0.4);
-  }
-  
-  .glow-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255,255,255,0.8);
-  }
-  
-  /* Floating Icons */
-  .icon {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    opacity: 0.12;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: blur(1px);
-  }
-  
-  .apple {
-    background-image: url("/icons/apple.svg");
-    top: 18%;
-    left: 15%;
-  }
-  
-  .flask {
-    background-image: url("/icons/flask.svg");
-    top: 30%;
-    right: 15%;
-  }
-  
-  .brain {
-    background-image: url("/icons/brain.svg");
-    bottom: 22%;
-    left: 20%;
-  }
-  
-  .leaf {
-    background-image: url("/icons/leaf.svg");
-    bottom: 20%;
-    right: 20%;
-  }
-
-  .hero-logo {
-    width: clamp(120px, 20vw, 300px);
-    margin-bottom: 1rem;
-    opacity: 0.9;
-    transition: transform 0.3s ease;
   }
