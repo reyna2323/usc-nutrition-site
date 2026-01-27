@@ -2,8 +2,8 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Splash from "./Splash";
 import Navbar from "./Navbar";
-import Home from "./Home";
 import "./style.css";
+import Hero from "./components/Hero";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -15,7 +15,7 @@ function App() {
       ) : (
         <>
           <Navbar />
-          <Home />
+          <Hero />
         </>
       )}
     </AnimatePresence>

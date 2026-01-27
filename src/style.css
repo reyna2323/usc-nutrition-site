@@ -1,151 +1,67 @@
 :root {
-    --onyx: #00120B;
-    --dark-slate: #35605A;
-    --slate-grey: #6B818C;
-    --lavender: #D8E4FF;
-    --spring-green: #31E981;
-  }
+  --onyx: #00120B;
+  --dark-slate: #35605A;
+  --slate-grey: #6B818C;
+  --lavender: #D8E4FF;
+  --spring-green: #31E981;
+}
 
-  * {
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    overflow-x: hidden;
-  }  
-  
-  body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: "Inter", sans-serif;
-    background: var(--lavender);
-    color: var(--onyx);
-  }
-  
-  .container {
-    width: 100%;
-  }
-  
-  /* HERO SECTION */
-  .hero {
-    width: 100%;
-    min-height: 100vh;
-  
-    padding: 2rem;
-  
-    background: linear-gradient(135deg, var(--dark-slate), var(--slate-grey));
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    text-align: center;
-    color: white;
-  }
-  
-  .hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(3rem, 6vw, 4rem);
-  }
-  
-  .hero p {
-    font-family: "Inter", sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    max-width: 600px;
-  }
-  
-  .hero button {
-    margin-top: 2rem;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 30px;
-    background: var(--spring-green);
-    color: var(--onyx);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .hero button:hover {
-    transform: scale(1.05);
-  }
-  
-  /* MISSION SECTION */
-  .mission {
-    font-family: "Inter", sans-serif;
-    padding: 4rem 2rem;
-    background: var(--lavender);
-    text-align: center;
-  }
-  
-  .mission h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-  }
-  
-  .mission p {
-    max-width: 700px;
-    margin: auto;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  /* MOBILE ADJUSTMENTS */
-  @media (max-width: 768px) {
-    .hero {
-      padding: 1.5rem;
-    }
-  
-    .hero button {
-      width: 80%;
-      max-width: 300px;
-    }
-  
-    .mission {
-      padding: 3rem 1.5rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-  
-    .hero p {
-      font-size: 1rem;
-    }
-  }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background: var(--lavender);
+  color: var(--onyx);
+}
+
+/* ================= NAVBAR ================= */
 
 .navbar {
   width: 100%;
-  box-sizing: border-box;
-
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 1rem 1.5rem;   /* taller vertically, not too wide horizontally */
+  padding: 1rem 1.5rem;
   border-bottom: 1px solid #eee;
 
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
 }
 
-/* LEFT */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .club-name {
   font-family: "Playfair Display", serif;
   font-size: 1.2rem;
 }
 
-/* CENTER LINKS */
+/* center links */
 .nav-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;   /* spreads words out horizontally */
+  gap: 1.5rem;
 }
 
 .nav-links a {
@@ -168,16 +84,16 @@
   background: #ccc;
 }
 
-/* SEARCH */
+/* search */
 .nav-search input {
   padding: 6px 12px;
   border-radius: 20px;
   border: 1px solid #ccc;
   font-size: 0.9rem;
-  max-width: 160px;   /* prevents overflow */
+  max-width: 160px;
 }
 
-/* RESPONSIVE */
+/* responsive navbar */
 @media (max-width: 900px) {
   .nav-search {
     display: none;
@@ -199,18 +115,70 @@
   }
 }
 
-.logo {
-  height: 40px;     /* controls size */
-  width: auto;
-  object-fit: contain;
-}
+/* ================= HERO ================= */
 
-.nav-left {
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+
+  background: linear-gradient(135deg, var(--dark-slate), var(--slate-grey));
+
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-/* SPLASH SCREEN */
+.hero-logo {
+  width: clamp(120px, 20vw, 300px);
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.welcome-text {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  letter-spacing: 3px;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+
+  text-shadow: 0 0 15px rgba(255,255,255,0.35);
+}
+
+.glow-button {
+  margin-top: 2rem;
+  padding: clamp(0.6rem, 1vw, 0.9rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 30px;
+  border: none;
+
+  background: white;
+  color: var(--onyx);
+
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  cursor: pointer;
+
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+  transition: 0.3s ease;
+}
+
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.9);
+}
+
+/* ================= SPLASH SCREEN ================= */
 
 .splash-container {
   position: fixed;
