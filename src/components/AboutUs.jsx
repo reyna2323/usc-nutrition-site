@@ -28,7 +28,6 @@ export default function AboutUs() {
 
           <h2>Executive Board</h2>
 
-          {/* Carousel */}
           <div className={`microscope-carousel ${activeMember ? "paused" : ""}`}>
             <div className="carousel-track">
               {[...board, ...board].map((member, i) => (
@@ -37,14 +36,14 @@ export default function AboutUs() {
                   key={i}
                   onClick={() => setActiveMember(member)}
                 >
-                  <div className="scan-line"></div>
+                  <div className="scan-line" />
 
                   <div className="slide-label">
                     <span>{member.role}</span>
                   </div>
 
                   <div className="slide-glass">
-                    <div className="slide-photo"></div>
+                    <div className="slide-photo" />
                     <h3>{member.name}</h3>
                     <FaEnvelope />
                   </div>
@@ -53,18 +52,16 @@ export default function AboutUs() {
             </div>
           </div>
 
-          {/* MODAL */}
           {activeMember && (
             <div className="slide-modal" onClick={() => setActiveMember(null)}>
               <div className="modal-card" onClick={(e) => e.stopPropagation()}>
 
-                <div className="modal-scan"></div>
+                <div className="modal-scan" />
 
                 <button className="close-btn" onClick={() => setActiveMember(null)}>
                   <FaTimes />
                 </button>
 
-                {/* LEFT SIDE */}
                 <div className="modal-info">
                   <div className="slide-label">
                     <span>{activeMember.role}</span>
@@ -72,7 +69,6 @@ export default function AboutUs() {
 
                   <div className="modal-text">
                     <h2>{activeMember.name}</h2>
-
                     <div className="modal-email">
                       <FaEnvelope />
                       <span>{activeMember.email}</span>
@@ -80,12 +76,11 @@ export default function AboutUs() {
                   </div>
                 </div>
 
-                {/* RIGHT SIDE IMAGE */}
-                <div className="modal-photo"></div>
-
+                <div className="modal-photo" />
               </div>
             </div>
           )}
+
         </div>
       </section>
     </div>
