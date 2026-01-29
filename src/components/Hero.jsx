@@ -76,10 +76,29 @@ export default function Hero() {
             transition={{ repeat: Infinity, duration: 3, ease: "easeOut" }}
           />
 
-          <div className="icon apple" />
-          <div className="icon flask" />
-          <div className="icon brain" />
-          <div className="icon leaf" />
+          <motion.div
+            className="icon apple"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <motion.div
+            className="icon flask"
+            animate={{ y: [0, 20, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <motion.div
+            className="icon brain"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <motion.div
+            className="icon leaf"
+            animate={{ y: [0, 15, 0] }}
+            transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+          />
 
           <motion.div
             className="hero-content"

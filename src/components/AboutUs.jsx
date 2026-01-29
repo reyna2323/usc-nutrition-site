@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function AboutUs() {
   const board = [
     { name: "Deshan Weeraratne", role: "Co-President", email: "dweerara@usc.edu" },
-    { name: "Mohamed Abdul-Saoud", role: "Co-President", email: "maboulsa@usc.edu" },
+    { name: "Mohamed Aboul-Saoud", role: "Co-President", email: "maboulsa@usc.edu" },
     { name: "Jeff Karnsomprot", role: "Secretary", email: "karnsomp@usc.edu" },
     { name: "George Zhou", role: "Treasurer", email: "gwzhou@usc.edu" },
     { name: "Aditya Seetharaman", role: "Programming Chair", email: "aseethar@usc.edu" },
