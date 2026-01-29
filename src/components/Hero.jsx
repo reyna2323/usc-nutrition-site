@@ -2,8 +2,11 @@ import { motion, animate, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useState } from "react";
 import "./Hero.css";
 import logo from "../assets/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   const containerRef = useRef(null);
   const [page, setPage] = useState(0);
   const [arrowActive, setArrowActive] = useState(false);
@@ -136,7 +139,10 @@ export default function Hero() {
               Some activities will include talks from professionals, demonstrations, and outreach combatting food insecurity right here in LA!
             </p>
 
-            <button className="mission-button">
+            <button 
+              className="mission-button"
+              onClick={() => navigate("/about")}
+            >
               Learn More About Us
             </button>
           </motion.div>
