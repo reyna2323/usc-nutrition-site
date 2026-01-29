@@ -129,11 +129,11 @@
 
 /* positioning */
 .arrow.down {
-  bottom: calc(40px + env(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
 }
 
 .arrow.up {
-  top: calc(90px + env(safe-area-inset-top));
+  top: calc(100px + env(safe-area-inset-top));
 }
 
 .mission-button {
