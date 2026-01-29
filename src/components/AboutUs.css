@@ -101,3 +101,131 @@
 .board-card a:hover {
   color: #31E981;
 }
+
+/* MICROSCOPE CAROUSEL */
+
+.microscope-carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: slideLoop 25s linear infinite;
+}
+
+/* loop animation */
+@keyframes slideLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* slide card */
+.slide-card {
+  position: relative;
+  display: flex;
+  width: 420px;
+  height: 200px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.2),
+    inset 0 0 20px rgba(255,255,255,0.4);
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.slide-card:hover {
+  transform: rotateY(10deg) translateY(-10px);
+}
+
+/* scan line */
+.scan-line {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  from { top: -40px; }
+  to { top: 100%; }
+}
+
+/* label strip */
+.slide-label {
+  width: 80px;
+  background: rgba(255,255,255,0.85);
+  border-right: 2px solid rgba(0,0,0,0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-label span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  font-family: "Courier New", monospace;
+}
+
+/* glass */
+.slide-glass {
+  flex: 1;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* photo */
+.slide-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  background: radial-gradient(circle, #31E981, #6B818C);
+  box-shadow: 0 0 25px rgba(49,233,129,0.7);
+
+  margin-bottom: 0.5rem;
+}
+
+/* name */
+.slide-glass h3 {
+  margin: 0.4rem 0;
+}
+
+/* email */
+.slide-glass a {
+  color: #00120B;
+  font-size: 1.4rem;
+  transition: color 0.2s ease;
+}
+
+.slide-glass a:hover {
+  color: #31E981;
+}

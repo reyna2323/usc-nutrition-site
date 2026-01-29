@@ -2,10 +2,17 @@ import "./AboutUs.css";
 import { FaEnvelope } from "react-icons/fa";
 
 export default function AboutUs() {
+  const board = [
+    { name: "President Name", role: "President", email: "president@email.com" },
+    { name: "Vice President Name", role: "Vice President", email: "vp@email.com" },
+    { name: "Secretary Name", role: "Secretary", email: "secretary@email.com" },
+    { name: "Treasurer Name", role: "Treasurer", email: "treasurer@email.com" },
+    { name: "Outreach Chair Name", role: "Outreach Chair", email: "outreach@email.com" },
+  ];
+
   return (
     <div className="about-wrapper">
       <section className="about-container">
-
         <div className="about-content">
 
           {/* Intro */}
@@ -19,29 +26,34 @@ export default function AboutUs() {
             </p>
           </div>
 
-          {/* Board */}
           <h2>Executive Board</h2>
 
-          <div className="board-grid">
-            {[
-              { name: "President Name", email: "president@email.com" },
-              { name: "Vice President Name", email: "vp@email.com" },
-              { name: "Secretary Name", email: "secretary@email.com" },
-              { name: "Treasurer Name", email: "treasurer@email.com" },
-              { name: "Outreach Chair Name", email: "outreach@email.com" },
-            ].map((member, i) => (
-              <div className="board-card" key={i}>
-                <div className="photo-placeholder"></div>
-                <h3>{member.name}</h3>
-                <a href={`mailto:${member.email}`}>
-                  <FaEnvelope />
-                </a>
-              </div>
-            ))}
+          {/* Carousel */}
+          <div className="microscope-carousel">
+            <div className="carousel-track">
+              {[...board, ...board].map((member, i) => (
+                <div className="slide-card" key={i}>
+
+                  <div className="scan-line"></div>
+
+                  <div className="slide-label">
+                    <span>{member.role}</span>
+                  </div>
+
+                  <div className="slide-glass">
+                    <div className="slide-photo"></div>
+                    <h3>{member.name}</h3>
+                    <a href={`mailto:${member.email}`}>
+                      <FaEnvelope />
+                    </a>
+                  </div>
+
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
-
       </section>
     </div>
   );
