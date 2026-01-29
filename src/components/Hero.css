@@ -1,21 +1,22 @@
 .hero-wrapper {
   height: 100dvh;
+  width: 100vw;
   overflow: hidden;
-  width: 100vw;          /* 👈 add this */
-  overflow-x: hidden;  /* 👈 add this */
 }
 
 .hero-stack {
-  height: 200vh;
+  position: relative;
+  height: 100%;
   width: 100%;
 }
 
 /* HERO SCREEN */
 .hero-container {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
+  padding-top: 72px;
 
   --x: 50%;
   --y: 50%;
@@ -56,13 +57,16 @@
 
 /* MISSION SCREEN */
 .mission-screen {
-  height: 100dvh;
+  position: absolute;
+  top: 100%;
+  left: 0;
   width: 100%;
+  height: 100%;
+
   background: linear-gradient(135deg, #6B818C, #35605A);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .mission-content {
