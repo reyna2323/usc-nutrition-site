@@ -4,11 +4,11 @@ import { useState } from "react";
 
 export default function AboutUs() {
   const board = [
-    { name: "President Name", role: "President", email: "president@email.com" },
-    { name: "Vice President Name", role: "Vice President", email: "vp@email.com" },
-    { name: "Secretary Name", role: "Secretary", email: "secretary@email.com" },
-    { name: "Treasurer Name", role: "Treasurer", email: "treasurer@email.com" },
-    { name: "Outreach Chair Name", role: "Outreach Chair", email: "outreach@email.com" },
+    { name: "Deshan Weeraratne", role: "Co-President", email: "dweerara@usc.edu" },
+    { name: "Mohamed Abdul-Saoud", role: "Vice President", email: "maboulsa@usc.edu" },
+    { name: "Jeff Karnsomprot", role: "Secretary", email: "karnsomp@usc.edu" },
+    { name: "George Zhou", role: "Treasurer", email: "treasurer@email.com" },
+    { name: "Aditya Seetharaman", role: "Programming Chair", email: "aseethar@usc.edu" },
   ];
 
   const [activeMember, setActiveMember] = useState(null);
