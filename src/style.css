@@ -10,11 +10,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -42,8 +37,6 @@ body {
   position: fixed;
   top: 0;
   z-index: 1000;
-
-  position: relative; /* 👈 ADD THIS */
 }
 
 .nav-left {
@@ -234,7 +227,6 @@ html, body, #root {
 }
 
 html, body {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
