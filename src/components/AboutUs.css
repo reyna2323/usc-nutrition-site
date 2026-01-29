@@ -21,6 +21,7 @@
   background: linear-gradient(135deg, var(--lavender), var(--slate-grey));
   display: flex;
   justify-content: center;
+  -webkit-overflow-scrolling: touch;
 }
 
 .about-content {
