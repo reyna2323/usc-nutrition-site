@@ -78,25 +78,25 @@ export default function Hero() {
 
           <motion.div
             className="icon apple"
-            animate={{ y: [0, -15, 0] }}
+            animate={{ y: [0, -15, 0],  rotate: [0, 3, -3, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
 
           <motion.div
             className="icon flask"
-            animate={{ y: [0, 20, 0] }}
+            animate={{ y: [0, 20, 0],   rotate: [0, 3, -3, 0]}}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           />
 
           <motion.div
             className="icon brain"
-            animate={{ y: [0, -20, 0] }}
+            animate={{ y: [0, -20, 0],   rotate: [0, 3, -3, 0]}}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
 
           <motion.div
             className="icon leaf"
-            animate={{ y: [0, 15, 0] }}
+            animate={{ y: [0, 15, 0],   rotate: [0, 3, -3, 0] }}
             transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
           />
 
