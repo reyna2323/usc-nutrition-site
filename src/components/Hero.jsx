@@ -52,13 +52,13 @@ export default function Hero() {
   const goToMission = () => {
     setPage(1);
     scrollY.set(0);
-    animate(containerRef.current, { y: "-100vh" }, { duration: 1, ease: "easeInOut" });
+    animate(containerRef.current, { y: "-100%" }, { duration: 1, ease: "easeInOut" });
   };
 
   const goToHero = () => {
     setPage(0);
     scrollY.set(0);
-    animate(containerRef.current, { y: "0vh" }, { duration: 1, ease: "easeInOut" });
+    animate(containerRef.current, { y: "0%" }, { duration: 1, ease: "easeInOut" });
   };
 
   return (
