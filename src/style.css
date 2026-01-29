@@ -107,13 +107,27 @@ body {
   .navbar {
     flex-direction: column;
     gap: 0.75rem;
+    padding: 0.75rem 1rem;
   }
 
   .nav-links {
+    position: static;              /* 👈 IMPORTANT */
+    transform: none;               /* 👈 IMPORTANT */
+    width: 100%;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
   }
 
   .divider {
+    display: none;
+  }
+
+  .nav-search {
     display: none;
   }
 }
@@ -227,6 +241,7 @@ html, body, #root {
 }
 
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
