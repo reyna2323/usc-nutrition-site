@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import logo from "./assets/logo.jpg";
+import "./App.css";
 
 export default function Navbar() {
   return (
@@ -8,15 +10,15 @@ export default function Navbar() {
       </div>
 
       <nav className="nav-links">
-        <a href="#">Home</a>
+        <Link to="/">Home</Link>
         <span className="divider"></span>
-        <a href="#">About Us</a>
+        <Link to="/about">About Us</Link>
         <span className="divider"></span>
-        <a href="#">Events</a>
+        <Link to="#">Events</Link>
         <span className="divider"></span>
-        <a href="#">Blog</a>
+        <Link to="#">Blog</Link>
         <span className="divider"></span>
-        <a href="#">Contact Us</a>
+        <Link to="#">Contact Us</Link>
       </nav>
 
       <div className="nav-search">

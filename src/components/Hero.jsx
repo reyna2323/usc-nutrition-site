@@ -73,6 +73,11 @@ export default function Hero() {
             transition={{ repeat: Infinity, duration: 3, ease: "easeOut" }}
           />
 
+          <div className="icon apple" />
+          <div className="icon flask" />
+          <div className="icon brain" />
+          <div className="icon leaf" />
+
           <motion.div
             className="hero-content"
             initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}

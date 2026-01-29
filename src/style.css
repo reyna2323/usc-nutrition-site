@@ -11,13 +11,15 @@
 }
 
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
   font-family: "Inter", sans-serif;
   background: var(--lavender);
   color: var(--onyx);
@@ -26,6 +28,9 @@ body {
 /* ================= NAVBAR ================= */
 
 .navbar {
+  left: 0;
+  right: 0;
+  box-sizing: border-box; 
   width: 100%;
   background: white;
   display: flex;
@@ -214,4 +219,17 @@ body {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   letter-spacing: 0.05em;
   margin: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* prevent page scroll */
 }
