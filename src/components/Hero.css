@@ -1,7 +1,7 @@
 .hero-wrapper {
   height: 100vh;
   overflow: hidden;
-  width: 100%;          /* 👈 add this */
+  width: 100vw;          /* 👈 add this */
   overflow-x: hidden;  /* 👈 add this */
 }
 
