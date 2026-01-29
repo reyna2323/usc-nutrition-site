@@ -108,6 +108,16 @@
   text-shadow: 0 0 35px rgba(255,255,255,1);
 }
 
+@media (max-width: 600px) {
+  .arrow {
+    font-size: 2rem;
+  }
+
+  .arrow.down {
+    bottom: 80px; /* higher on phone */
+  }
+}
+
 @keyframes pulseArrow {
   0% { transform: translateX(-50%) scale(1); }
   50% { transform: translateX(-50%) scale(1.25); }
