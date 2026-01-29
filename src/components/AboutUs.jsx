@@ -7,7 +7,7 @@ export default function AboutUs() {
     { name: "Deshan Weeraratne", role: "Co-President", email: "dweerara@usc.edu" },
     { name: "Mohamed Abdul-Saoud", role: "Vice President", email: "maboulsa@usc.edu" },
     { name: "Jeff Karnsomprot", role: "Secretary", email: "karnsomp@usc.edu" },
-    { name: "George Zhou", role: "Treasurer", email: "treasurer@email.com" },
+    { name: "George Zhou", role: "Treasurer", email: "gwzhou@usc.edu" },
     { name: "Aditya Seetharaman", role: "Programming Chair", email: "aseethar@usc.edu" },
   ];
 
@@ -55,29 +55,37 @@ export default function AboutUs() {
 
           {/* MODAL */}
           {activeMember && (
-            <div className="slide-modal">
-              <div className="modal-card">
+            <div className="slide-modal" onClick={() => setActiveMember(null)}>
+              <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+
+                <div className="modal-scan"></div>
+
                 <button className="close-btn" onClick={() => setActiveMember(null)}>
                   <FaTimes />
                 </button>
 
-                <div className="modal-scan"></div>
+                {/* LEFT SIDE */}
+                <div className="modal-info">
+                  <div className="slide-label">
+                    <span>{activeMember.role}</span>
+                  </div>
 
-                <div className="slide-label">
-                  <span>{activeMember.role}</span>
+                  <div className="modal-text">
+                    <h2>{activeMember.name}</h2>
+
+                    <div className="modal-email">
+                      <FaEnvelope />
+                      <span>{activeMember.email}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="slide-glass">
-                  <div className="slide-photo large"></div>
-                  <h2>{activeMember.name}</h2>
-                  <a href={`mailto:${activeMember.email}`}>
-                    <FaEnvelope />
-                  </a>
-                </div>
+                {/* RIGHT SIDE IMAGE */}
+                <div className="modal-photo"></div>
+
               </div>
             </div>
           )}
-
         </div>
       </section>
     </div>
