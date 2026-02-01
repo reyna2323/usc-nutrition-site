@@ -155,7 +155,7 @@ export default function Hero() {
             <h1>Our Mission</h1>
             <p>
               This club will provide social and educational opportunities for those interested in nutrition and food science.
-              Some activities will include talks from professionals, demonstrations, and outreach combatting food insecurity right here in LA!
+              Some activities will include talks from professionals, demonstrations, and outreach combatting food insecurity right here in LA! Can't wait to have everyone on board!
             </p>
 
             <button 
